@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 0e597332792fcc7409d32a8349d5e3bf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hexCellPrefab: {fileID: 7425711147318862103, guid: 27ef95406d88347468dacafb8c6a7a26, type: 3}
+  - cellInactiveMaterial: {fileID: 2100000, guid: 9f917b0d304f9cb449f480e54bd8f655, type: 2}
+  - cellActiveMaterial: {fileID: 2100000, guid: b117b930c23e3a3409c9a0d519060d53, type: 2}
+  - cellHighlightedMaterial: {fileID: 2100000, guid: abfb17694e90f514096d9336a09ad016, type: 2}
+  - cellBlockedMaterial: {fileID: 2100000, guid: 8bda522cc53855d46b15a6be20e46ee3, type: 2}
+  - gameObject: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

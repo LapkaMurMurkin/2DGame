@@ -12,9 +12,6 @@ namespace Game.HexGrid
         [ReadOnly]
         public List<Cell> Grid;
 
-        private const float CELL_OUTER_RADIUS = 1;
-        private const float CELL_INNER_RADIUS = CELL_OUTER_RADIUS * 0.866025404f;
-
         private void Awake()
         {
             Grid = new List<Cell>();

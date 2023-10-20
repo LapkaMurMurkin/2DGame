@@ -8,8 +8,6 @@ namespace Game.InputSystem
     {
         private ActionsMap _actionsMap;
         private Raycaster _raycaster;
-        
-        private GameObject _rayHitObject = null;
 
         public static UnityEvent<MouseClick> MouseClicked = new UnityEvent<MouseClick>();
         public static UnityEvent<GameObject> CellFound = new UnityEvent<GameObject>();
@@ -48,25 +46,6 @@ namespace Game.InputSystem
                 mouseClick.ClickedObject = _raycaster.GetRayHitObject();
 
             MouseClicked.Invoke(mouseClick);
-
-            //Debug.Log(mouseClick.Button + " " + mouseClick.Phase + " " + mouseClick.ClickedObject);
         }
-
-        void Update()
-        {
-/*             _raycaster.CastCursorRay();
-
-            if (_raycaster.CheckRayHitInCell())
-            {
-                GameObject rayHitObjectBuffer = _raycaster.GetRayHitObject();
-
-                if (_rayHitObject != rayHitObjectBuffer)
-                {
-                    _rayHitObject = rayHitObjectBuffer;
-                    CellFound.Invoke(_rayHitObject);
-                    Debug.Log(_rayHitObject);
-                }
-            }*/
-        } 
     }
 }

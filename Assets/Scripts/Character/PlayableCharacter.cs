@@ -12,6 +12,7 @@ using Game.InputSystem;
 
 namespace Game.Character
 {
+    [RequireComponent(typeof(PlayableCharacterEditorMode))]
     public class PlayableCharacter : MonoBehaviour
     {
         [ReadOnly]

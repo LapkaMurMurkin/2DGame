@@ -1,40 +1,21 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-namespace Game.InputSystem
+public static class MouseClick
 {
-    public class MouseClick
+    public static float LastClickTime { get; private set; } = 0;
+
+    public static bool CheckDoubleClick(PointerEventData pointerEventData)
     {
-        public string Button;
-        public string Phase;
-        public GameObject ClickedObject;
+        bool isDoubleClicked = (Time.unscaledTime - LastClickTime < Constants.DOUBLE_CLICK_THRESHOLD_TIME) && (pointerEventData.clickCount == 2);
 
-        public MouseClick(InputAction.CallbackContext context)
-        {
-            Button = context.control.name;
-            Phase = context.phase.ToString();
-            ClickedObject = null;
-        }
+        LastClickTime = Time.unscaledTime;
 
-        public MouseClick(InputAction.CallbackContext context, GameObject clickedObject)
-        {
-            Button = context.control.name;
-            Phase = context.phase.ToString();
-            ClickedObject = clickedObject;
-        }
-
-        public static class ButtonName
-        {
-            public const string LEFT = "leftButton";
-            public const string MIDDLE = "middleButton";
-            public const string RIGHT = "rightButton";
-        }
-
-        public static class PhaseName
-        {
-            public const string STARTED = "Started";
-            public const string PERFORMED = "Performed";
-            public const string CANCELED = "Canceled";
-        }
+        if (isDoubleClicked)
+            return true;
+        else
+            return false;
     }
 }
+
